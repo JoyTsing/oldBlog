@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="C++中如何定义接口类?首先给接口类下了定义：接口类应该是只提供方法声明，而自身不提供方法定义的抽象类。接口类自身不能实例化，接口类的方法定义/实现只能由接口类的子类来完成。 而对于C++，其接口类一般具有以下特征：  1.最好不要有成员变量，但可以有静态常量（static const或enum） 2.要有纯虚接口方法 3.要有虚析构函数，并提供默认实现 4.不要声明构造函数  如下就是一个最简单">
-<meta name="keywords" content="C++,设计模式">
+<meta name="keywords" content="设计模式,C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ 定义和使用接口类">
 <meta property="og:url" content="http://yoursite.com/2019/09/23/C-定义和使用接口类/index.html">
@@ -41,9 +41,6 @@
 
   
 
-  
-    
- 	  <script src="/lib/clickLove.js"></script>
   
   
 
@@ -194,11 +191,6 @@
 
   
   
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
 <a href="/2019/09/23/C-定义和使用接口类/" class="archive-article-date">
         <time datetime="2019-09-23T15:14:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
 </a>
@@ -328,33 +320,6 @@
     
 
     
-    <div class="page-reward">
-      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
-        <div class="tooltip tooltip-east">
-          <span class="tooltip-item">
-            赏
-          </span>
-          <span class="tooltip-content">
-            <span class="tooltip-text">
-              <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
-                    class="icon icon-quo-right"></i></p>
-                <div class="reward-box">
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/assets/img/zhifubao.jpg">
-                    <span class="reward-type">支付宝</span>
-                  </div>
-                  
-                  
-                </div>
-              </span>
-            </span>
-          </span>
-        </div>
-      </a>
-    </div>
-    
 
     
 
@@ -367,11 +332,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
@@ -520,9 +485,6 @@
   </div>
   
   
-	<script src="/lib/busuanzi.pure.js"></script>
-	
-  
   
 </footer>
 
@@ -576,10 +538,10 @@ MathJax.Hub.Queue(function() {
   var titleTime;
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) {
-      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+      document.title = "(つェ⊂)" + originTitle;
       clearTimeout(titleTime);
     } else {
-      document.title = "欢迎来到我的小窝" + originTitle;
+      document.title = "" + originTitle;
       titleTime = setTimeout(function () {
         document.title = originTitle;
       }, 2000);
@@ -640,11 +602,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">虚表</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,7 +610,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color4">虚函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">虚表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,11 +626,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -680,7 +642,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -745,15 +707,6 @@ MathJax.Hub.Queue(function() {
             </li>
           
             <li class="search-li">
-              <a href="https://cxyxiaowu.com/" target="_blank" class="search-title" >
-                
-                  <i class="icon-link icon"></i>
-                
-                liuyubobobo
-              </a>
-            </li>
-          
-            <li class="search-li">
               <a href="https://lyh543.github.io/" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
@@ -771,7 +724,7 @@ MathJax.Hub.Queue(function() {
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">一条咸鱼<br><br>慢慢记录code之旅<br>年轻无为，卖马为生</div>
+  	  		<div class="aboutme-wrap" id="aboutme">一条咸鱼<br><br>慢慢记录code之旅<br>年轻无为</div>
   	  	
     	</section>
     

@@ -6,25 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C++ virtual function分析 | JoyTing&#39;S Blog</title>
+  <title>Tag: Linux | JoyTing&#39;S Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一、概述为了实现C++的多态，C++使用了一种动态绑定的技术。这个技术的核心是虚函数表（下文简称虚表）。本文介绍虚函数表是如何实现动态绑定的。 二、类的虚表每个包含了虚函数的类都包含一个虚表。我们知道，当一个类（A）继承另一个类（B）时，类A会继承类B的函数的调用权。所以如果一个基类包含了虚函数，那么其继承类也可调用这些虚函数，换句话说，一个类继承了包含虚函数的基类，那么这个类也拥有自己的虚表。">
-<meta name="keywords" content="C++,虚函数,虚表">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C++ virtual function分析">
-<meta property="og:url" content="http://yoursite.com/2019/09/23/C-virtual-function分析/index.html">
+  <meta name="description" content="电子科技大学在校生">
+<meta name="keywords" content="摸鱼仔">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JoyTing&#39;S Blog">
+<meta property="og:url" content="http://yoursite.com/tags/Linux/page/2/index.html">
 <meta property="og:site_name" content="JoyTing&#39;S Blog">
-<meta property="og:description" content="一、概述为了实现C++的多态，C++使用了一种动态绑定的技术。这个技术的核心是虚函数表（下文简称虚表）。本文介绍虚函数表是如何实现动态绑定的。 二、类的虚表每个包含了虚函数的类都包含一个虚表。我们知道，当一个类（A）继承另一个类（B）时，类A会继承类B的函数的调用权。所以如果一个基类包含了虚函数，那么其继承类也可调用这些虚函数，换句话说，一个类继承了包含虚函数的基类，那么这个类也拥有自己的虚表。">
+<meta property="og:description" content="电子科技大学在校生">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/09/23/C-virtual-function分析/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/23/C-virtual-function分析/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/23/C-virtual-function分析/3.png">
-<meta property="og:updated_time" content="2019-09-23T16:03:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ virtual function分析">
-<meta name="twitter:description" content="一、概述为了实现C++的多态，C++使用了一种动态绑定的技术。这个技术的核心是虚函数表（下文简称虚表）。本文介绍虚函数表是如何实现动态绑定的。 二、类的虚表每个包含了虚函数的类都包含一个虚表。我们知道，当一个类（A）继承另一个类（B）时，类A会继承类B的函数的调用权。所以如果一个基类包含了虚函数，那么其继承类也可调用这些虚函数，换句话说，一个类继承了包含虚函数的基类，那么这个类也拥有自己的虚表。">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/23/C-virtual-function分析/1.png">
+<meta name="twitter:title" content="JoyTing&#39;S Blog">
+<meta name="twitter:description" content="电子科技大学在校生">
   
     <link rel="alternative" href="/atom.xml" title="JoyTing&#39;S Blog" type="application/atom+xml">
   
@@ -181,245 +176,69 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-C-virtual-function分析" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-      <header class="article-header">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/03/28/Linux学习笔记-一/" class="archive-article-date">
+        <time datetime="2020-03-28T14:14:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
+</a>
+
+        </div>
+    	 
   
+    <h1 itemprop="name">
+	
+	  <a class="archive-article-title" href="/2020/03/28/Linux学习笔记-一/" target="_blank">Linux学习笔记(一)</a>
   
-    <h1 class="article-title" itemprop="name">
-      C++ virtual function分析
     </h1>
   
 
 
-  
-  
-<a href="/2019/09/23/C-virtual-function分析/" class="archive-article-date">
-        <time datetime="2019-09-23T04:40:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.8k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">6分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><p>为了实现C++的多态，C++使用了一种动态绑定的技术。这个技术的核心是虚函数表（下文简称虚表）。本文介绍虚函数表是如何实现动态绑定的。</p>
-<h3 id="二、类的虚表"><a href="#二、类的虚表" class="headerlink" title="二、类的虚表"></a>二、类的虚表</h3><p>每个包含了虚函数的类都包含一个虚表。<br>我们知道，当一个类（A）继承另一个类（B）时，类A会继承类B的函数的调用权。所以如果一个基类包含了虚函数，那么其继承类也可调用这些虚函数，换句话说，一个类继承了包含虚函数的基类，那么这个类也拥有自己的虚表。</p>
-<p>我们来看以下的代码。类A包含虚函数vfunc1，vfunc2，由于类A包含虚函数，故类A拥有一个虚表。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc1</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc2</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func2</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_data1, m_data2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-<p>类A的虚表如图1所示:<br><img src="/2019/09/23/C-virtual-function分析/1.png" alt="类A的虚表示意图"></p>
-<p>虚表是一个指针数组，其元素是虚函数的指针，每个元素对应一个虚函数的函数指针。需要指出的是，普通的函数即非虚函数，其调用并不需要经过虚表，所以虚表的元素并不包括普通函数的函数指针。<br>虚表内的条目，即虚函数指针的赋值发生在编译器的编译阶段，也就是说在代码的编译阶段，虚表就可以构造出来了。</p>
-<h3 id="三、虚表指针"><a href="#三、虚表指针" class="headerlink" title="三、虚表指针"></a>三、虚表指针</h3><p>虚表是属于类的，而不是属于某个具体的对象，一个类只需要一个虚表即可。同一个类的所有对象都使用同一个虚表。<br>为了指定对象的虚表，对象内部包含一个虚表的指针，来指向自己所使用的虚表。为了让每个包含虚表的类的对象都拥有一个虚表指针，编译器在类中添加了一个指针，<em>__vptr，用来指向虚表。这样，当类的对象在创建时便拥有了这个指针，且这个指针的值会自动被设置为指向类的虚表。<br>*对象与它的虚表:</em><br><img src="/2019/09/23/C-virtual-function分析/2.png" alt="对象与它的虚表"></p>
-<p>上面指出，一个继承类的基类如果包含虚函数，那个这个继承类也有拥有自己的虚表，故这个继承类的对象也包含一个虚表指针，用来指向它的虚表。</p>
-<h3 id="四、动态绑定"><a href="#四、动态绑定" class="headerlink" title="四、动态绑定"></a>四、动态绑定</h3><p>说到这里，大家一定会好奇C++是如何利用虚表和虚表指针来实现动态绑定的。我们先看下面的代码。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc1</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc2</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func2</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_data1, m_data2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> :</span> <span class="keyword">public</span> A &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc1</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_data3;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>:</span> <span class="keyword">public</span> B &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc2</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func2</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_data1, m_data4;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>类A是基类，类B继承类A，类C又继承类B。类A，类B，类C，其对象模型如下图3所示。<br><img src="/2019/09/23/C-virtual-function分析/3.png" alt="类A，类B，类C的对象模型"><br>由于这三个类都有虚函数，故编译器为每个类都创建了一个虚表，即类A的虚表（A vtbl），类B的虚表（B vtbl），类C的虚表（C vtbl）。类A，类B，类C的对象都拥有一个虚表指针，*__vptr，用来指向自己所属类的虚表。<br>类A包括两个虚函数，故A vtbl包含两个指针，分别指向A::vfunc1()和A::vfunc2()。<br>类B继承于类A，故类B可以调用类A的函数，但由于类B重写了B::vfunc1()函数，故B vtbl的两个指针分别指向B::vfunc1()和A::vfunc2()。<br>类C继承于类B，故类C可以调用类B的函数，但由于类C重写了C::vfunc2()函数，故C vtbl的两个指针分别指向B::vfunc1()（指向继承的最近的一个类的函数）和C::vfunc2()。<br>虽然图3看起来有点复杂，但是只要抓住“对象的虚表指针用来指向自己所属类的虚表，虚表中的指针会指向其继承的最近的一个类的虚函数”这个特点，便可以快速将这几个类的对象模型在自己的脑海中描绘出来。</p>
-<p>非虚函数的调用不用经过虚表，故不需要虚表中的指针指向这些函数。</p>
-<p>假设我们定义一个类B的对象。由于bObject是类B的一个对象，故bObject包含一个虚表指针，指向类B的虚表。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    B bObject;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>现在，我们声明一个类A的指针p来指向对象bObject。虽然p是基类的指针只能指向基类的部分，但是虚表指针亦属于基类部分，所以p可以访问到对象bObject的虚表指针。bObject的虚表指针指向类B的虚表，所以p可以访问到B vtbl。如图3所示。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    B bObject;</span><br><span class="line">    A *p = &amp; bObject;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当我们使用p来调用vfunc1()函数时，会发生什么现象？</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    B bObject;</span><br><span class="line">    A *p = &amp; bObject;</span><br><span class="line">    p-&gt;vfunc1();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>程序在执行p-&gt;vfunc1()时，会发现p是个指针，且调用的函数是虚函数，接下来便会进行以下的步骤。<br>首先，根据虚表指针p-&gt;<strong>vptr来访问对象bObject对应的虚表。虽然指针p是基类A<em>类型，但是</em></strong>vptr也是基类的一部分，所以可以通过p-&gt;__vptr可以访问到对象对应的虚表。<br>然后，在虚表中查找所调用的函数对应的条目。由于虚表在编译阶段就可以构造出来了，所以可以根据所调用的函数定位到虚表中的对应条目。对于 p-&gt;vfunc1()的调用，B vtbl的第一项即是vfunc1对应的条目。<br>最后，根据虚表中找到的函数指针，调用函数。从图3可以看到，B vtbl的第一项指向B::vfunc1()，所以 p-&gt;vfunc1()实质会调用B::vfunc1()函数。</p>
-<p>如果p指向类A的对象，情况又是怎么样？</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    A aObject;</span><br><span class="line">    A *p = &amp;aObject;</span><br><span class="line">    p-&gt;vfunc1();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当aObject在创建时，它的虚表指针<strong>vptr已设置为指向A vtbl，这样p-&gt;</strong>vptr就指向A vtbl。vfunc1在A vtbl对应在条目指向了A::vfunc1()函数，所以 p-&gt;vfunc1()实质会调用A::vfunc1()函数。</p>
-<p>可以把以上三个调用函数的步骤用以下表达式来表示：<br><code>(*(p-&gt;__vptr)[n])(p)</code></p>
-<p>可以看到，通过使用这些虚函数表，即使使用的是基类的指针来调用函数，也可以达到正确调用运行中实际对象的虚函数。<br>我们把经过虚表调用虚函数的过程称为动态绑定，其表现出来的现象称为运行时多态。动态绑定区别于传统的函数调用，传统的函数调用我们称之为静态绑定，即函数的调用在编译阶段就可以确定下来了。</p>
-<p>那么，什么时候会执行函数的动态绑定？这需要符合以下三个条件。</p>
-<ul>
-<li>通过指针来调用函数</li>
-<li>指针upcast向上转型（继承类向基类的转换称为upcast，关于什么是upcast，可以参考本文的参考资料）</li>
-<li>调用的是虚函数</li>
-</ul>
-<p>如果一个函数调用符合以上三个条件，编译器就会把该函数调用编译成动态绑定，其函数的调用过程走的是上述通过虚表的机制。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚函数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">虚表</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-    
+          
 
-    
-
-    
-    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a> -->
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/23/C-virtual-function分析/" alt="微信分享二维码"> -->
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-    
-    <div class="clearfix"></div>
-  </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2019/09/23/C-定义和使用接口类/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          C++ 定义和使用接口类
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/09/22/C-虚函数和虚函数表原理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++虚函数和虚函数表原理(推荐)</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、概述"><span class="toc-number">1.</span> <span class="toc-text">一、概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、类的虚表"><span class="toc-number">2.</span> <span class="toc-text">二、类的虚表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、虚表指针"><span class="toc-number">3.</span> <span class="toc-text">三、虚表指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、动态绑定"><span class="toc-number">4.</span> <span class="toc-text">四、动态绑定</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/tags/Linux/">&laquo; Prev</a><a class="page-number" href="/tags/Linux/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 
 
           </div>
@@ -448,9 +267,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

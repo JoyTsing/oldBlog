@@ -44,9 +44,6 @@
   
 
   
-    
- 	  <script src="/lib/clickLove.js"></script>
-  
   
 
 
@@ -183,6 +180,99 @@
           </div>
           <div id="js-content" class="content-ll">
             
+
+  
+    <article id="post-Gcc编译的背后" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/12/04/Gcc编译的背后/" target="_blank">Gcc编译的背后</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/12/04/Gcc编译的背后/" class="archive-article-date">
+        <time datetime="2020-12-04T09:39:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-04</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在linux下写代码时，使用gcc只需要输入<code>gcc a.c -o a</code>就将代码编译好了，这背后做了些什么，在学习了下一学期的《编译原理》则不难理解，一般来说高级语言程序编译的过程只需要：预处理、编译、汇编、链接。gcc在后台实际上也经历了这几个过程，通过<code>-v</code>参数就可以查看它的编译细节，想要看某个具体的编译过程，则可以分别使用<code>-E</code>,<code>-S</code>,<code>-c</code>,<code>-o</code>,对应的后台工具分别为<code>cpp</code>,<code>ccl</code>,<code>as</code>,<code>ld</code>。</p>
+<p>下面将逐步分析这几个过程以及相关的内容，比如语法检查，代码调试，汇编语言等待。</p>
+    
+    <a class="article-more-a" href="/2020/12/04/Gcc编译的背后/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/12/04/Gcc编译的背后/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
 
   
     <article id="post-Linux学习笔记-十" class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -985,95 +1075,6 @@
 
 
   
-    <article id="post-Linux学习笔记-二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/07/Linux学习笔记-二/" target="_blank">Linux学习笔记(二)</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/07/Linux学习笔记-二/" class="archive-article-date">
-        <time datetime="2020-04-07T09:22:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="Unix系统下的登陆与退出"><a href="#Unix系统下的登陆与退出" class="headerlink" title="Unix系统下的登陆与退出"></a>Unix系统下的登陆与退出</h2><p>Unix系统一直以其安全性著称，实现安全性的一个比较重要的方法就是多用户分组管理，毕竟你不能让一个随便创建的用户来运行诸如<code>rm -rf \</code>等危险的命令  ,因此用户在使用Unix系统时候，需要进行登录。</p>
-<p>值得一提的是树莓派使用的Raspbian系统，实际上是Debian系统，而在Debian中root账户默认没有密码，并且账户是锁定的，因此如果执行一些需要root权限的命令时，就需要开启root用户。</p>
-    
-    <a class="article-more-a" href="/2020/04/07/Linux学习笔记-二/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/07/Linux学习笔记-二/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1098,9 +1099,6 @@
     </div>
   </div>
   
-  
-	<script src="/lib/busuanzi.pure.js"></script>
-	
   
   
 </footer>
@@ -1155,10 +1153,10 @@ MathJax.Hub.Queue(function() {
   var titleTime;
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) {
-      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+      document.title = "(つェ⊂)" + originTitle;
       clearTimeout(titleTime);
     } else {
-      document.title = "欢迎来到我的小窝" + originTitle;
+      document.title = "" + originTitle;
       titleTime = setTimeout(function () {
         document.title = originTitle;
       }, 2000);
@@ -1219,11 +1217,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">虚表</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1231,7 +1225,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color4">虚函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">虚表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1243,11 +1241,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1259,7 +1257,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1324,15 +1322,6 @@ MathJax.Hub.Queue(function() {
             </li>
           
             <li class="search-li">
-              <a href="https://cxyxiaowu.com/" target="_blank" class="search-title" >
-                
-                  <i class="icon-link icon"></i>
-                
-                liuyubobobo
-              </a>
-            </li>
-          
-            <li class="search-li">
               <a href="https://lyh543.github.io/" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
@@ -1350,7 +1339,7 @@ MathJax.Hub.Queue(function() {
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">一条咸鱼<br><br>慢慢记录code之旅<br>年轻无为，卖马为生</div>
+  	  		<div class="aboutme-wrap" id="aboutme">一条咸鱼<br><br>慢慢记录code之旅<br>年轻无为</div>
   	  	
     	</section>
     

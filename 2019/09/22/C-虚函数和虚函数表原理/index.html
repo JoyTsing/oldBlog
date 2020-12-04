@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="前言大家都应该知道C++的精髓是虚函数吧? 虚函数带来的好处就是: 可以定义一个基类的指针, 其指向一个继承类, 当通过基类的指针去调用函数时, 可以在运行时决定该调用基类的函数还是继承类的函数. 虚函数是实现多态(动态绑定)/接口函数的基础. 可以说: 没有虚函数, C++将变得一无是处! 既然是C++的精髓, 那么我们有必要了解一下她的实现方式吗? 有必要! 既然C++是从C语言的基础上发展而">
-<meta name="keywords" content="虚函数,虚表,C++">
+<meta name="keywords" content="C++,虚函数,虚表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++虚函数和虚函数表原理(推荐)">
 <meta property="og:url" content="http://yoursite.com/2019/09/22/C-虚函数和虚函数表原理/index.html">
@@ -70,9 +70,6 @@
 
   
 
-  
-    
- 	  <script src="/lib/clickLove.js"></script>
   
   
 
@@ -223,11 +220,6 @@
 
   
   
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
 <a href="/2019/09/22/C-虚函数和虚函数表原理/" class="archive-article-date">
         <time datetime="2019-09-22T15:45:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
 </a>
@@ -559,33 +551,6 @@ offsetof(base1_2):8</code></pre></li>
     
 
     
-    <div class="page-reward">
-      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
-        <div class="tooltip tooltip-east">
-          <span class="tooltip-item">
-            赏
-          </span>
-          <span class="tooltip-content">
-            <span class="tooltip-text">
-              <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
-                    class="icon icon-quo-right"></i></p>
-                <div class="reward-box">
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/assets/img/zhifubao.jpg">
-                    <span class="reward-type">支付宝</span>
-                  </div>
-                  
-                  
-                </div>
-              </span>
-            </span>
-          </span>
-        </div>
-      </a>
-    </div>
-    
 
     
 
@@ -598,15 +563,15 @@ offsetof(base1_2):8</code></pre></li>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚函数</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">虚表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
@@ -755,9 +720,6 @@ offsetof(base1_2):8</code></pre></li>
   </div>
   
   
-	<script src="/lib/busuanzi.pure.js"></script>
-	
-  
   
 </footer>
 
@@ -811,10 +773,10 @@ MathJax.Hub.Queue(function() {
   var titleTime;
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) {
-      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+      document.title = "(つェ⊂)" + originTitle;
       clearTimeout(titleTime);
     } else {
-      document.title = "欢迎来到我的小窝" + originTitle;
+      document.title = "" + originTitle;
       titleTime = setTimeout(function () {
         document.title = originTitle;
       }, 2000);
@@ -875,11 +837,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">虚表</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -887,7 +845,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color4">虚函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">虚表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -899,11 +861,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -915,7 +877,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -980,15 +942,6 @@ MathJax.Hub.Queue(function() {
             </li>
           
             <li class="search-li">
-              <a href="https://cxyxiaowu.com/" target="_blank" class="search-title" >
-                
-                  <i class="icon-link icon"></i>
-                
-                liuyubobobo
-              </a>
-            </li>
-          
-            <li class="search-li">
               <a href="https://lyh543.github.io/" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
@@ -1006,7 +959,7 @@ MathJax.Hub.Queue(function() {
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">一条咸鱼<br><br>慢慢记录code之旅<br>年轻无为，卖马为生</div>
+  	  		<div class="aboutme-wrap" id="aboutme">一条咸鱼<br><br>慢慢记录code之旅<br>年轻无为</div>
   	  	
     	</section>
     
